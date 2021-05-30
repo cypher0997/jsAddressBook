@@ -1,12 +1,21 @@
 class AddressBook{
-    constructor(fName,lName,address,city,state,zip,phoneNumber){
-        this.fName = fName
-        this.lName = lName
-        this.address = address
-        this.city = city
-        this.state = state
-        this.zip = zip
-        this.phoneNumber = phoneNumber
+    constructor(FName,lName,address,city,state,zip,phoneNumber){
+        outer:while(true){
+            for(let i = 0;i<addressBook.length;i++){
+                if(addressBook[i].fName == FName){
+                    console.log( addressBook[i].fName+ " duplicate entry of same person not allowed")
+                    break outer;
+                }
+            }
+            this.fName = FName
+            this.lName = lName
+            this.address = address
+            this.city = city
+            this.state = state
+            this.zip = zip
+            this.phoneNumber = phoneNumber
+            break;
+        }
     }
 }
 let addressBook = []
@@ -14,6 +23,8 @@ let contactPerson1 = new AddressBook("anurag","bhardwaj","achrol","city","rajast
 addressBook.push(contactPerson1)
 let contactPerson2 = new AddressBook("rajat","bhardwaj","acghrol","city","rajastha",46458,9089890)
 addressBook.push(contactPerson2)
+let contactPerson3 = new AddressBook("rajat","bhardwaj","acghrol","city","rajastha",46458,9089890)
+addressBook.push(contactPerson3)
  
 for(let i = 0;i<addressBook.length;i++){
     if(addressBook[i].fName == "anurag"){
