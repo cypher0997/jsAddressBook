@@ -55,10 +55,7 @@ for(let i = 0;i<addressBook.length;i++){
  },0);
  console.log(length)
  
- for(vieew in addressBook){
-     console.log(addressBook[vieew])
- }
 const filteredArray = addressBook.filter(function(values){
-    return values.city == "jaipur"
+    return values.city == "udaipur" && values.fName == "rajat"
 })
 console.log(filteredArray)
