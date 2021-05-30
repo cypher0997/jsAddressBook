@@ -27,11 +27,11 @@ for(let i = 0;i<addressBook.length;i++){
     }
 }
 
-//  for(let i = 0;i<addressBook.length;i++){
-//     if(addressBook[i].fName == "dfsdf"){
-//         addressBook.splice(i,1)
-//     }
-//  }
+ for(let i = 0;i<addressBook.length;i++){
+    if(addressBook[i].fName == "dfsdf"){
+        addressBook.splice(i,1)
+    }
+ }
 
  let length = addressBook.reduce((accumulator,currentValue)=>{
     accumulator += 1;
