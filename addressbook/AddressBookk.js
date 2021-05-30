@@ -1,9 +1,11 @@
+let counter = false
 class AddressBook{
     constructor(FName,lName,address,city,state,zip,phoneNumber){
         outer:while(true){
             for(let i = 0;i<addressBook.length;i++){
                 if(addressBook[i].fName == FName){
                     console.log( addressBook[i].fName+ " duplicate entry of same person not allowed")
+                    counter = true;
                     break outer;
                 }
             }
@@ -19,13 +21,16 @@ class AddressBook{
     }
 }
 let addressBook = []
-let contactPerson1 = new AddressBook("anurag","bhardwaj","achrol","city","rajastha",4645,997877)
+
+let contactPerson1 = new AddressBook("anurag","bhardwaj","achrol","jaipur","rajastha",4645,997877)
 addressBook.push(contactPerson1)
-let contactPerson2 = new AddressBook("rajat","bhardwaj","acghrol","city","rajastha",46458,9089890)
+let contactPerson2 = new AddressBook("rajat","bhardwaj","acghrol","udaipur","rajastha",46458,9089890)
 addressBook.push(contactPerson2)
 let contactPerson3 = new AddressBook("rajat","bhardwaj","acghrol","city","rajastha",46458,9089890)
-addressBook.push(contactPerson3)
- 
+if(counter == false){
+    addressBook.push(contactPerson3)
+}
+
 for(let i = 0;i<addressBook.length;i++){
     if(addressBook[i].fName == "anurag"){
         addressBook[i].fName="dfsdf"
@@ -49,4 +54,15 @@ for(let i = 0;i<addressBook.length;i++){
     return accumulator
  },0);
  console.log(length)
- //pass
+ 
+const filteredArray = addressBook.filter(function(values){
+    return values.city == "udaipur" && values.fName == "rajat"
+})
+console.log(filteredArray)
+
+const filteredArrayForCityOrState = addressBook.filter(function(values){
+    return values.city == "udaipur"
+})
+console.log(filteredArrayForCityOrState)
+
+
